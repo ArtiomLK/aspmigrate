@@ -32,8 +32,7 @@ Migrate ASP.Net apps to Azure
     $p = @{
       Suffix = "lk" # MUST be 3 or less characters e.g. alk (OK), arlk (NOT OK)
       Location = "EastUS2"
-      AddressPrefix = "10.4"  # generates a 10.4.0.0/16 vnet address space of . Valid inputs could be "10.10" that generated "10.10.0.0/16" or "20.15" which generated "20.15.0.0/16.
-    }
+    }; echo $p
 
     # ---
     # OPTIONAL
@@ -53,6 +52,11 @@ Migrate ASP.Net apps to Azure
       Name = "rg-$($c.AppName)-$($c.Env)-$($p.Suffix)"
       Location = "$($p.Location)"
    }
+
+   # Test our created variables
+   $p
+   $c
+   $rgParams
    ```
 
 2. ## Create Resource Group
