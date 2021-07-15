@@ -43,25 +43,25 @@ Migrate ASP.Net apps to Azure
       Env = "dev"
     }
 
-   # ---
-   # DO NOT REPLACE THESE PARAMS
-   # You shouldn't replace the following params unless you specifically require it
-   # ---
-   # Resource Group params
-   $rgParams = @{
-      Name = "rg-$($c.AppName)-$($c.Env)-$($p.Suffix)"
-      Location = "$($p.Location)"
-   }
+    # ---
+    # DO NOT REPLACE THESE PARAMS
+    # You shouldn't replace the following params unless you specifically require it
+    # ---
+    # Resource Group params
+    $rgParams = @{
+        Name = "rg-$($c.AppName)-$($c.Env)-$($p.Suffix)"
+        Location = "$($p.Location)"
+    }
 
-   # Test our created variables
-   $p
-   $c
-   $rgParams
+    # Test our created variables
+    $p
+    $c
+    $rgParams
    ```
 
 2. ## Create Resource Group
 
    ```PowerShell
-   # Create the ResourceGroup
-   New-AzResourceGroup @rgParams
+    # Create the ResourceGroup
+    New-AzResourceGroup @rgParams
    ```
