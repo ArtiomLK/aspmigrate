@@ -65,3 +65,10 @@ Migrate ASP.Net apps to Azure
     # Create the ResourceGroup
     New-AzResourceGroup @rgParams
    ```
+
+## Additional Resources
+
+- HYBRID NETWORKING
+- [MS | Docs | Dual-redundancy: active-active VPN gateways for both Azure and on-premises networks][1]
+
+[1]: https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-highlyavailable#dual-redundancy-active-active-vpn-gateways-for-both-azure-and-on-premises-networks
