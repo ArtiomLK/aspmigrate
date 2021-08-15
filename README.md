@@ -46,7 +46,7 @@ az deployment sub create -l "eastus2" -f .\main.bicep -n "aseDeploy" -c
 ### Clean up resources
 
 ```bash
-az group delete -n $kv_rg -y
+az group delete -n "rg-name" -y
 ```
 
 ---
