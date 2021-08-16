@@ -14,6 +14,9 @@ resource ase 'Microsoft.Web/hostingEnvironments@2021-01-15' = {
     }
     zoneRedundant: aseZoneRedundancy
   }
+  tags: {
+    'ase-version': 'v3'
+  }
 }
 
 output asePlanId string = ase.id
