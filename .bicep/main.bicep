@@ -31,3 +31,14 @@ module asePlan 'plan.bicep' = {
     hostingEnvironmentId: aseDeploy.outputs.asePlanId
   }
 }
+
+module siteDeploy 'site.bicep' = {
+  name: 'siteDeploy${prefix}'
+  scope: rg
+  params: {
+    appPlanId: asePlan.outputs.planId
+    namePrefix: 'aspnet${prefix}'
+    dockerImage: 'nginxdemos/hello'
+    dockerImageTag: 'latest'
+  }
+}

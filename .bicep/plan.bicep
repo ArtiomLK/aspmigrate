@@ -14,7 +14,7 @@ var hostingEnvironmentProfile = {
   id: hostingEnvironmentId
 }
 
-resource appServicePlanName_resource 'Microsoft.Web/serverfarms@2021-01-01' = {
+resource appPlan 'Microsoft.Web/serverfarms@2021-01-01' = {
   kind: appServicePlanKind
   name: appServicePlanName
   location: location
@@ -27,3 +27,5 @@ resource appServicePlanName_resource 'Microsoft.Web/serverfarms@2021-01-01' = {
   }
   sku: appServicePlanSku
 }
+
+output planId string = appPlan.id
