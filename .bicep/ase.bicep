@@ -19,4 +19,4 @@ resource ase 'Microsoft.Web/hostingEnvironments@2021-01-15' = {
   }
 }
 
-output asePlanId string = ase.id
+output aseId string = ase.id
