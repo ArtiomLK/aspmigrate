@@ -62,7 +62,7 @@ module snetAgwDeploy 'snet/snetAgw.bicep' = if (empty(vnetIdP)) {
 // ------------------------------------------------------------------------------------------------
 // ASE
 // ASE - sNet
-module snetAseDeploy 'snet/snetAgw.bicep' = if (empty(vnetIdP)) {
+module snetAseDeploy 'snet/snetAse.bicep' = if (empty(vnetIdP)) {
   name: 'snet-ase-deployment'
   params: {
     snetName: '${vnetNameP}/${snetAseNameP}'
