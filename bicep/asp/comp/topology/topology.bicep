@@ -63,7 +63,7 @@ module snetAgwDeploy 'snet/snetAgw.bicep' = if (empty(vnetIdP)) {
 // PE
 // PE - sNet
 module snetPeDeploy 'snet/snetPe.bicep' = if (empty(vnetIdP)) {
-  name: 'snet-ase-deployment'
+  name: 'snet-pe-deployment'
   params: {
     snetName: '${vnetNameP}/${snetPeNameP}'
     snetAddr: snetPeAddrP
