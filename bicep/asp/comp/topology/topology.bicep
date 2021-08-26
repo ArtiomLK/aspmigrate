@@ -19,7 +19,7 @@ param snetAgwAddrP string = '10.10.1.0/24'
 param nsgAgwNameP string = 'nsg-agw-${suffix}'
 
 // sNet - PE
-param snetPeNameP string = 'snet-ase-${suffix}'
+param snetPeNameP string = 'snet-pe-${suffix}'
 param snetPeAddrP string = '10.10.2.0/24'
 
 // ------------------------------------------------------------------------------------------------
