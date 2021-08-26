@@ -9,14 +9,6 @@ resource snetDeployment 'Microsoft.Network/virtualNetworks/subnets@2021-02-01' =
     networkSecurityGroup: {
       id: nsgId
     }
-    delegations: [
-      {
-        name: 'Microsoft.Web.hostingEnvironments'
-        properties: {
-          serviceName: 'Microsoft.Web/hostingEnvironments'
-        }
-      }
-    ]
   }
 }
 

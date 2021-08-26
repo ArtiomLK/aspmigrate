@@ -1,4 +1,4 @@
-param appName string = 'plan'
+param appName string = 'asp'
 param env string = 'prod'
 param tags object = {
   app: appName
@@ -19,8 +19,8 @@ param snetAgwAddrP string = '10.10.1.0/24'
 param nsgAgwNameP string = 'nsg-agw-${suffix}'
 
 // sNet - PE
-param snetAseNameP string = 'snet-ase-${suffix}'
-param snetAseAddrP string = '10.10.2.0/24'
+param snetPeNameP string = 'snet-ase-${suffix}'
+param snetPeAddrP string = '10.10.2.0/24'
 
 // ------------------------------------------------------------------------------------------------
 // vNet
@@ -62,11 +62,11 @@ module snetAgwDeploy 'snet/snetAgw.bicep' = if (empty(vnetIdP)) {
 // ------------------------------------------------------------------------------------------------
 // PE
 // PE - sNet
-module snetAseDeploy 'snet/snetAse.bicep' = if (empty(vnetIdP)) {
+module snetPeDeploy 'snet/snetPe.bicep' = if (empty(vnetIdP)) {
   name: 'snet-ase-deployment'
   params: {
-    snetName: '${vnetNameP}/${snetAseNameP}'
-    snetAddr: snetAseAddrP
+    snetName: '${vnetNameP}/${snetPeNameP}'
+    snetAddr: snetPeAddrP
     nsgId: nsgDefaultDeploy.outputs.id
   }
 }

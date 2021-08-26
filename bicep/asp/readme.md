@@ -37,7 +37,7 @@ export MSYS_NO_PATHCONV=1
 
 ### Trigger our deployment
 # make sure to move to where the main.bicep file is with the command 'cd'
-az deployment sub create -l "eastus2" -f main.bicep -n "aseDeploy" -c
+az deployment sub create -l "eastus2" -f main.bicep -n "aspDeploy" -c
 ```
 
 ---

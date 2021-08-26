@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-param appName string = 'plan'
+param appName string = 'asp'
 param env string = 'prod'
 param tags object = {
   app: appName
@@ -21,8 +21,8 @@ param snetAgwAddrP string = '10.10.1.0/24'
 param nsgAgwNameP string = 'nsg-agw-${suffix}'
 
 // PE
-param snetAseNameP string = 'snet-ase-${suffix}'
-param snetAseAddrP string = '10.10.2.0/24'
+param snetPeNameP string = 'snet-pe-${suffix}'
+param snetPeAddrP string = '10.10.2.0/24'
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: 'rg-${suffix}'
@@ -48,7 +48,7 @@ module topologyDeploy 'comp/topology/topology.bicep' = {
     // AGW - NSG
     nsgAgwNameP: nsgAgwNameP
     // PE
-    snetAseNameP: snetAseNameP
-    snetAseAddrP: snetAseAddrP
+    snetPeNameP: snetPeNameP
+    snetPeAddrP: snetPeAddrP
   }
 }
