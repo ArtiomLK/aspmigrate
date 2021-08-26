@@ -24,6 +24,12 @@ param nsgAgwNameP string = 'nsg-agw-${suffix}'
 param snetPeNameP string = 'snet-pe-${suffix}'
 param snetPeAddrP string = '10.10.2.0/24'
 
+// Web Appss
+// ASP
+param aspName string = 'asp-${suffix}'
+param aspKind string = 'windows'
+param aspSku string = 'P2v3'
+
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: 'rg-${suffix}'
   tags: tags
@@ -50,5 +56,15 @@ module topologyDeploy 'comp/topology/topology.bicep' = {
     // PE
     snetPeNameP: snetPeNameP
     snetPeAddrP: snetPeAddrP
+  }
+}
+
+module aspDeploy 'comp/asp/asp.bicep' = {
+  name: 'asp-deployment'
+  scope: rg
+  params: {
+    aspName: aspName
+    aspKind: aspKind
+    aspSku: aspSku
   }
 }
