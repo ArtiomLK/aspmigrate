@@ -29,6 +29,8 @@ param snetPeAddrP string = '10.10.2.0/24'
 param aspName string = 'asp-${suffix}'
 param aspKind string = 'windows'
 param aspSku string = 'P2v3'
+// App
+param siteName string = 'site-${suffix}'
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: 'rg-${suffix}'
@@ -66,5 +68,14 @@ module aspDeploy 'comp/asp/asp.bicep' = {
     aspName: aspName
     aspKind: aspKind
     aspSku: aspSku
+  }
+}
+
+module siteDeploy 'comp/web/app.bicep' = {
+  name: 'siteDeploy'
+  scope: rg
+  params: {
+    siteName: siteName
+    aseId: aspDeploy.outputs.id
   }
 }
